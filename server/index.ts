@@ -51,8 +51,8 @@ async function createAdminUserIfNotExists() {
     if (!adminUser) {
       // Create admin user if it doesn't exist
       await storage.createUser({
-        username: adminusername,
-        password: adminpassword,
+        username: adminUsername,
+        password: adminPassword,
         isAdmin: true
       });
       console.log("Admin user created successfully");
