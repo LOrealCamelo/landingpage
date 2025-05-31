@@ -9,6 +9,7 @@ interface AgentProps {
   description?: string;
 }
 
+
 function Agent({ name, role, imageSrc, delay, description }: AgentProps) {
   return (
     <motion.div
@@ -52,14 +53,45 @@ export function AgentsSection() {
             Our AI agents are designed with cutting-edge technology to provide seamless support and exceptional service
           </p>
         </div>
-        
+
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            className="rounded-xl overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <img 
+              src="/assets/aiteam2.png" 
+              alt="AI Team Group Photo 1"
+              className="w-full h-[400px] object-cover object-center"
+            />
+          </motion.div>
+          
+          <motion.div
+            className="rounded-xl overflow-hidden"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <img 
+              src="/assets/aiteam1.png" 
+              alt="AI Team Group Photo 2"
+              className="w-full h-[400px] object-cover object-center"
+            />
+          </motion.div>
+        </div>
+
         {/* Agents Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           <Agent 
             name="Maya"
             role="AI Marketing Genius"
             description="Custom image creation for your social media posts"
-            imageSrc="/assets/agents/agent1.png"
+            imageSrc="/assets/agents/aiagent8.png"
             delay={0}
           />
           
@@ -67,7 +99,7 @@ export function AgentsSection() {
             name="Alex"
             role="AI Voice Customer Service Agent"
             description="Inbound and outbound sales calls"
-            imageSrc="/assets/agents/agent2.png"
+            imageSrc="/assets/agents/aiagent11.png"
             delay={0.1}
           />
           
@@ -75,7 +107,7 @@ export function AgentsSection() {
             name="David"
             role="AI Sales Force Lead Generator"
             description="Advanced Web Scraping functions"
-            imageSrc="/assets/agents/agent3.png"
+            imageSrc="/assets/agents/aiagent13.png"
             delay={0.2}
           />
           
@@ -83,7 +115,7 @@ export function AgentsSection() {
             name="Sophie"
             role="AI Voice Customer Service Agent"
             description="Inbound and outbound sales calls"
-            imageSrc="/assets/agents/agent4.png"
+            imageSrc="/assets/agents/aiagent9.png"
             delay={0.3}
           />
         </div>

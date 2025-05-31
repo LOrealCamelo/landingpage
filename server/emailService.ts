@@ -1,5 +1,3 @@
-// Declaring module for nodemailer to resolve TypeScript issues
-declare module 'nodemailer';
 import nodemailer from 'nodemailer';
 import { Contact } from '@shared/schema';
 import { Inquiry } from '@shared/schema';
