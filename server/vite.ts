@@ -4,7 +4,17 @@ import path from "path";
 import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
 import viteConfig from "../vite.config";
-import { nanoid } from "nanoid"; // Ensure you have nanoid installed;
+// import { nanoid } from "nanoid"; // This import fails if nanoid is not installed or not found
+
+// Use a simple fallback implementation for nanoid
+function nanoid(size = 21) {
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-';
+  let id = '';
+  for (let i = 0; i < size; i++) {
+    id += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return id;
+}
 
 const viteLogger = createLogger();
 
