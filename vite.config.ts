@@ -17,6 +17,7 @@ export default defineConfig({
   },
   root: path.resolve(__dirname, "client"),
   build: {
+    minify: false, // Temporarily disable minification to better spot issues
     outDir: path.resolve(__dirname, "dist/public"),
     emptyOutDir: true,
   },
