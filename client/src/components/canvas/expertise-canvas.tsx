@@ -1,5 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
+interface NodeData {
+  mesh: THREE.Mesh;
+  initialPosition: THREE.Vector3;
+  pulseFactor: number;
+}
 
 export function ExpertiseCanvas() {
   const canvasRef = useRef<HTMLDivElement>(null);
@@ -41,7 +46,7 @@ export function ExpertiseCanvas() {
     scene.add(brain);
     
     // Add some nodes to represent neural connections
-    const nodes = [];
+    const nodes: NodeData[] = [];
     for (let i = 0; i < 50; i++) {
       const nodeGeometry = new THREE.SphereGeometry(0.05, 16, 16);
       const nodeMaterial = new THREE.MeshStandardMaterial({
