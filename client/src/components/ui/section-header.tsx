@@ -1,10 +1,10 @@
 
-import React from 'react';
+import { ReactNode } from 'react';
 
 interface SectionHeaderProps {
   badge?: string;
-  title: string;
-  description?: string;
+  title: ReactNode;
+  description?: ReactNode;
   centered?: boolean;
   className?: string;
 }
