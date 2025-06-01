@@ -46,7 +46,12 @@ export function ContactCanvas() {
     });
     
     // Create particles in a grid formation
-    const particles = [];
+    type Particle = {
+      mesh: THREE.Mesh;
+      initialPosition: THREE.Vector3;
+      speed: number;
+    };
+    const particles: Particle[] = [];
     const gridSize = 10;
     const spacing = 0.3;
     
